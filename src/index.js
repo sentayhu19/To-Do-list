@@ -1,5 +1,6 @@
 import './style.css';
-let list = [
+
+const list = [
   {
     index: 0,
     description: 'my task one',
@@ -19,16 +20,14 @@ let list = [
     index: 3,
     description: 'my task four',
     completed: true,
-  }
+  },
 ];
-let renderlists= () =>{
-const listselector = document.getElementById('to-do-list');
-let render='';
-list.forEach(listItem => {
-   render += ` <li><div class="main-item-wrap"><div class="listitems-wrap"><input type="checkbox" class="checkbox"> ${listItem.description}</div><img src="https://icon-library.com/images/three-vertical-dots-icon/three-vertical-dots-icon-6.jpg"></div></li> <hr> `;  
-});
-listselector.innerHTML = render;
-}
+const renderlists = () => {
+  const listselector = document.getElementById('to-do-list');
+  let render = '';
+  list.forEach((listItem) => {
+    render += ` <li><div class="main-item-wrap"><div class="listitems-wrap"><input type="checkbox" class="checkbox"> ${listItem.description}</div><img src="https://icon-library.com/images/three-vertical-dots-icon/three-vertical-dots-icon-6.jpg" alt="edit"></div></li> <hr> `;
+  });
+  listselector.innerHTML = render;
+};
 renderlists();
-
-

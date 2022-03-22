@@ -1,8 +1,9 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: wheat;
 }
@@ -16,54 +17,58 @@ body {
   background-color: white;
   box-shadow: 5px 5px 5px 5px #989;
 }
-button{
+
+button {
   background-color: rgb(245, 238, 238);
   border: 1px black solid;
   height: 35px;
 }
-h2{
+
+h2 {
   padding-bottom: 27px;
 }
-.hader-sec{
+
+.hader-sec {
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
   padding-right: 15px;
   padding-left: 15px;
 }
-img{
+
+img {
   width: 20px;
   height: 20px;
 }
 
-ul{
+ul {
   list-style-type: none;
 }
 
-.listitems-wrap{
-display: flex;
-gap: 10px;
-justify-items: center;
+.listitems-wrap {
+  display: flex;
+  gap: 10px;
+  justify-items: center;
 }
 
-.checkbox{
+.checkbox {
   height: 22px;
 }
 
-li{
+li {
   padding-left: 10px;
   padding-bottom: 10px;
 }
 
-#input-field{
+#input-field {
   height: 35px;
-  
 }
-.main-item-wrap{
+
+.main-item-wrap {
   display: flex;
   justify-content: space-between;
 }
 
-hr{
+hr {
   background-color: rgb(245, 238, 238);
 }
