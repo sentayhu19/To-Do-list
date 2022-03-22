@@ -7,26 +7,26 @@ const list = [
     completed: true,
   },
   {
-    index: 1,
+    index: 3,
     description: 'my task two',
     completed: true,
   },
   {
-    index: 2,
+    index: 1,
     description: 'my task three',
     completed: true,
   },
   {
-    index: 3,
+    index: 2,
     description: 'my task four',
-    completed: true,
+    completed: false,
   },
 ];
 const renderlists = () => {
   const listselector = document.getElementById('to-do-list');
   let render = '';
-  list.forEach((listItem) => {
-    render += ` <li><div class="main-item-wrap"><div class="listitems-wrap"><input type="checkbox" class="checkbox"> ${listItem.description}</div><img src="https://icon-library.com/images/three-vertical-dots-icon/three-vertical-dots-icon-6.jpg" alt="edit"></div></li> <hr> `;
+  list.sort((x, y) => x.index - y.index).forEach((listItem) => {
+    render += ` <li><div class="main-item-wrap"><div class="listitems-wrap"><input type="checkbox" class="checkbox" ${list.completed ? 'checked' : ''} > ${listItem.description}</div><img src="https://icon-library.com/images/three-vertical-dots-icon/three-vertical-dots-icon-6.jpg" alt="edit"></div></li> <hr> `;
   });
   listselector.innerHTML = render;
 };
