@@ -9,10 +9,6 @@
     "start": "webpack serve --open",
     "build": "webpack"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sentayhu19/To-Do-list.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
