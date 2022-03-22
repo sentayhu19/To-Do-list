@@ -54,10 +54,7 @@ npx hint .
 - GitHub: [@sentayhu19](https://github.com/sentayhu19)
 - LinkedIn: [sentayhu-berhanu](https://www.linkedin.com/in/sentayhu-berhanu-6376579a/)
 
-👤 **Oybek Kayumov**
 
-- GitHub: [OybekKayumov](https://github.com/OybekKayumov)
-- LinkedIn: [oybek-kayumov](https://www.linkedin.com/in/oybek-kayumov-54a8485b/)
 
 ## 🤝 Contributing
 
