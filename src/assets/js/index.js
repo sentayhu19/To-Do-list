@@ -27,7 +27,7 @@ let renderlists = () => {
 console.log(tasklist);
   let render = '';
   tasks.list.sort((x, y) => x.index - y.index).forEach((listItem, i) => {
-    render += ` <li  class="taskitems"><div class="main-item-wrap"><div class="listitems-wrap"><input type="checkbox" name="checkboxtask" id=${i} class="checkbox" ${tasks.list.completed ? 'checked' : ''} > ${listItem.description}</div><img src="https://icon-library.com/images/three-vertical-dots-icon/three-vertical-dots-icon-6.jpg" alt="edit"></div></li> <hr> `;
+    render += ` <li  id=${i}t class="taskitems"><div class="main-item-wrap"><div class="listitems-wrap"><input type="checkbox" name="checkboxtask" id=${i} class="checkbox" ${tasks.list.completed ? 'checked' : ''} > ${listItem.description}</div><img src="https://icon-library.com/images/three-vertical-dots-icon/three-vertical-dots-icon-6.jpg" alt="edit"></div><hr></li>  `;
   });
   listselector.innerHTML = render;
 };
