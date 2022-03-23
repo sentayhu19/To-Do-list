@@ -74,21 +74,22 @@ hr {
   background-color: rgb(245, 238, 238);
 }
 
-.editBox{
+.editBox {
   display: none;
   width: 70%;
   height: 30px;
 }
 
-.trash-and-edit-flx{
+.trash-and-edit-flx {
   display: flex;
 }
 
-.trash-icn{
+.trash-icn {
   color: red;
   font-size: 30px;
 }
-.trashbtn{
+
+.trashbtn {
   border-color: white;
   background-color: white;
 }

@@ -1,58 +1,53 @@
 import '../../style.css';
 import Tasks from './tasklist';
+
 const tasks = new Tasks();
 const inputBox = document.querySelector('#input-field');
 
- 
-  let editfunc = ()=>{
-const edit= document.querySelectorAll('li img');
-edit.forEach((e) => {
-  e.addEventListener('click', () => {
-    console.log("EDit btn");
-    const elem = e.parentNode.parentNode;
-    const editID = elem.querySelector('input[class=checkbox]').id;
-    console.log("Edit  is ",editID);
-    const EditBoxId= editID+"box";
-    document.getElementById(EditBoxId).style.cssText="display: block;";
-    const editbox= document.getElementById(EditBoxId);
-    editbox.addEventListener('keyup', (event) => {
-  if (event.code === 'Enter') {
-    console.log(tasks.list[editID]+"to be edited");
-    console.log(tasks.list);
-    tasks.list[editID].description = editbox.value;
-    
-    localStorage.setItem('tasks', JSON.stringify(tasks.list));
-    document.getElementById(EditBoxId).style.cssText="display: none;";
-    renderlists();
-    return;
-  }
-});
+const editfunc = () => {
+  const edit = document.querySelectorAll('li img');
+  edit.forEach((e) => {
+    e.addEventListener('click', () => {
+      const elem = e.parentNode.parentNode;
+      const editID = elem.querySelector('input[class=checkbox]').id;
+
+      const EditBoxId = `${editID}box`;
+      document.getElementById(EditBoxId).style.cssText = 'display: block;';
+      const editbox = document.getElementById(EditBoxId);
+      editbox.addEventListener('keyup', (event) => {
+        if (event.code === 'Enter') {
+          tasks.list[editID].description = editbox.value;
+
+          localStorage.setItem('tasks', JSON.stringify(tasks.list));
+          document.getElementById(EditBoxId).style.cssText = 'display: none;';
+          renderlists();
+        }
+      });
+    });
   });
-});
-  };
-  editfunc();
-  let deleteTask=()=> {
-    try{
+};
+editfunc();
+const deleteTask = () => {
+  try {
     const deletetask = document.querySelectorAll('li button');
-    
-    deletetask.forEach((deleteBtn) =>{
-    deleteBtn.addEventListener('click', () => {
-      console.log("Trash clicked");
-    
-      const elem = deleteBtn.parentNode.parentNode;
-      const listid = elem.querySelector('input[type=checkbox]:checked').id;
-    console.log('checkbox id   : ',listid);
-    tasks.list.forEach((taskindex, i) => {
-      taskindex.index = i;
-      localStorage.setItem('tasks', JSON.stringify(tasks.list));
+
+    deletetask.forEach((deleteBtn) => {
+      deleteBtn.addEventListener('click', () => {
+        const elem = deleteBtn.parentNode.parentNode;
+        const listid = elem.querySelector('input[type=checkbox]:checked').id;
+
+        tasks.list.forEach((taskindex, i) => {
+          taskindex.index = i;
+          localStorage.setItem('tasks', JSON.stringify(tasks.list));
+        });
+        tasks.removetask(listid);
+
+        renderlists();
+      });
     });
-    tasks.removetask(listid);
-    console.log("calling render from dlete ");
-    renderlists();
-    });
-    });}catch(e){
-      console.log("Error",e)
-    }}
+  } catch (e) {
+  }
+};
 
 const renderlists = () => {
   const listselector = document.getElementById('to-do-list');
@@ -114,4 +109,16 @@ clearbtn.addEventListener('click', () => {
     localStorage.setItem('tasks', JSON.stringify(tasks.list));
   });
   renderlists();
+});
+const checkboxtf = document.querySelectorAll('input[type=checkbox]');
+checkboxtf.forEach((box) => {
+  box.addEventListener('change', () => {
+    if (box.checked) {
+      tasks.list[box.id].completed = true;
+      localStorage.setItem('tasks', JSON.stringify(tasks.list));
+    } else {
+      tasks.list[box.id].completed = false;
+      localStorage.setItem('tasks', JSON.stringify(tasks.list));
+    }
+  });
 });

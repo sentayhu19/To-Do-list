@@ -7,7 +7,6 @@ export default class Tasks {
   }
 
   removetask(indexval) {
-      console.log('Remove got index of  ', indexval)
     this.list = this.list.filter((currentlist) => currentlist.index != indexval);
     localStorage.setItem('tasks', JSON.stringify(this.list));
   }
