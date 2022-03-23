@@ -58,6 +58,7 @@ ul {
 li {
   padding-left: 10px;
   padding-bottom: 10px;
+  padding-right: 10px;
 }
 
 #input-field {
@@ -71,4 +72,23 @@ li {
 
 hr {
   background-color: rgb(245, 238, 238);
+}
+
+.editBox{
+  display: none;
+  width: 70%;
+  height: 30px;
+}
+
+.trash-and-edit-flx{
+  display: flex;
+}
+
+.trash-icn{
+  color: red;
+  font-size: 30px;
+}
+.trashbtn{
+  border-color: white;
+  background-color: white;
 }
