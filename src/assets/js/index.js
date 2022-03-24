@@ -1,6 +1,6 @@
 import '../../style.css';
 import Tasks from './tasklist';
-import taskchecker from './taskchecker';
+
 
 let renderlists = () => {}; // introduction
 const tasks = new Tasks();
@@ -44,10 +44,6 @@ const deleteTask = () => {
       const elem = deleteBtn.parentNode.parentNode;
       const listid = elem.querySelector('input[type=checkbox]:checked').id;
       // Delete those checked checkboxes
-      tasks.list.forEach((taskindex, i) => {
-        taskindex.index = i;
-        localStorage.setItem('tasks', JSON.stringify(tasks.list));
-      });
       tasks.removetask(listid);
       fixindex();
       renderlists();
@@ -119,3 +115,4 @@ clearbtn.addEventListener('click', () => {
   renderlists();
 });
 taskchecker();
+import taskchecker from './taskchecker';
