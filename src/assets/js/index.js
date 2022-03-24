@@ -1,5 +1,6 @@
 import '../../style.css';
-import Tasks from './tasklist';
+import Tasks from './tasklist'; 
+import taskchecker from './taskchecker';
 
 let renderlists = () => {}; // introduction
 const tasks = new Tasks();
@@ -10,20 +11,7 @@ const fixindex = () => {
     localStorage.setItem('tasks', JSON.stringify(tasks.list));
   });
 };
-const taskchecker = () => {
-  const checkboxtf = document.querySelectorAll('input[type=checkbox]');
-  checkboxtf.forEach((box) => {
-    box.addEventListener('change', () => {
-      if (box.checked) {
-        tasks.list[box.id].completed = true;
-        localStorage.setItem('tasks', JSON.stringify(tasks.list));
-      } else {
-        tasks.list[box.id].completed = false;
-        localStorage.setItem('tasks', JSON.stringify(tasks.list));
-      }
-    });
-  });
-};
+
 const editfunc = () => {
   const edit = document.querySelectorAll('li img');
   edit.forEach((e) => {
