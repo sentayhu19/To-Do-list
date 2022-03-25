@@ -4,11 +4,11 @@
 
 > This project is about building To do llist
 
-![Awesome Books design (20)](https://github.com/sentayhu19/To-Do-list/blob/add-and-remove/src/assets/images/Screenshot.png)
+![To Do List design (20)](https://github.com/sentayhu19/To-Do-list/blob/add-and-remove/src/assets/images/Screenshot.png)
 
 ## Live demo
-<!-- 
-[Live Demo Link]( https://sentayhu19.github.io/Awesome-books/) -->
+
+[Live Demo Link]( https://sentayhu19.github.io/To-Do-list/dist/index.html)
 
 ## Built With
 
