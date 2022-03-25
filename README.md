@@ -4,7 +4,7 @@
 
 > This project is about building To do llist
 
-<!-- ![Awesome Books design (20)](https://github.com/sentayhu19/Awesome-books/blob/modules/images/Screenshot.png) -->
+![Awesome Books design (20)](https://github.com/sentayhu19/To-Do-list/blob/add-and-remove/src/assets/images/Screenshot.png)
 
 ## Live demo
 <!-- 
