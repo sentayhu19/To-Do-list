@@ -123,7 +123,9 @@ clearbtn.addEventListener('click', () => {
     test.push(listid);
     elem.remove();
   });
+  renderlists();
   fixindex();
+  
 });
 taskchecker();
 
