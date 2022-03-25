@@ -125,7 +125,6 @@ clearbtn.addEventListener('click', () => {
   });
   renderlists();
   fixindex();
-  
 });
 taskchecker();
 
