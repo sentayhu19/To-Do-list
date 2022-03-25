@@ -1,4 +1,4 @@
-/* eslint-disable eqeqeq  */
+/* eslint-disable eqeqeq */
 export default class Tasks {
   constructor() {
     this.list = localStorage.getItem('tasks')

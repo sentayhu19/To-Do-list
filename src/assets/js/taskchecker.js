@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import tasks from './index';
 
 const taskchecker = () => {

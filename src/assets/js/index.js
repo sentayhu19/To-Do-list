@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import '../../style.css';
 import Tasks from './tasklist';
 import taskchecker from './taskchecker';
@@ -21,6 +22,8 @@ const editfunc = () => {
 
       const EditBoxId = `${editID}box`;
       document.getElementById(EditBoxId).style.cssText = 'display: block;';
+      const place = `${editID}d`;
+      document.getElementById(place).style.cssText = 'display: none;';
       const editbox = document.getElementById(EditBoxId);
       editbox.addEventListener('keyup', (event) => {
         if (event.code === 'Enter') {
@@ -28,6 +31,7 @@ const editfunc = () => {
 
           localStorage.setItem('tasks', JSON.stringify(tasks.list));
           document.getElementById(EditBoxId).style.cssText = 'display: none;';
+          document.getElementById(place).style.cssText = 'display: block;';
           renderlists();
           taskchecker();
         }
@@ -44,7 +48,7 @@ const deleteTask = () => {
       const elem = deleteBtn.parentNode.parentNode.parentNode.parentNode;
       const listid = elem.querySelector('input[type=checkbox]:checked').id;
       // Delete those checked checkboxes
-      console.log('Elm is ', elem);
+
       tasks.removetask(listid);
       renderlists();
       taskchecker();
@@ -55,27 +59,35 @@ const deleteTask = () => {
 renderlists = () => {
   const listselector = document.getElementById('to-do-list');
   let render = '';
-  tasks.list.sort((x, y) => x.index - y.index).forEach((listItem, i) => {
-    render += `
+  tasks.list
+    .sort((x, y) => x.index - y.index)
+    .forEach((listItem, i) => {
+      render += `
      <li  id=${i}t class="taskitems">
     <div class="main-item-wrap">
-    <div class="listitems-wrap">
-    <input type="checkbox" name="checkboxtask" id=${i} class="checkbox" ${listItem.completed ? 'checked' : 'not'} > ${listItem.description}
+    <div  class="listitems-wrap" >
+    <input type="checkbox" name="checkboxtask" id=${i} class="checkbox" ${
+  listItem.completed ? 'checked' : 'not'
+} ><p id=${i}d> ${listItem.description} </p>
+      <input type="text" class="editBox" placeholder="${
+  listItem.description
+}" id=${i}box>
     </div>
+   
     <div>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Edit_icon_%28the_Noun_Project_30184%29.svg/150px-Edit_icon_%28the_Noun_Project_30184%29.svg.png?20161202215740" id=${i}e alt="edit"  class="edit">
     <button type="button" class="trashbtn"><b class="trash-icn">🗑</b></button>
 </div>
     </div>
     <br>
-    <input type="text" class="editBox" placeholder="${listItem.description}" id=${i}box>
+    
     <hr>
     </li>  `;
-  });
+    });
   listselector.innerHTML = render;
   editfunc();
-  console.log('render calling delete');
   deleteTask();
+
   taskchecker();
   fixindex();
 };
