@@ -122,11 +122,9 @@ clearbtn.addEventListener('click', () => {
     tasks.removetask(listid);
     test.push(listid);
     elem.remove();
-
-    renderlists();
   });
-  fixindex();
   renderlists();
+  fixindex();
 });
 taskchecker();
 
