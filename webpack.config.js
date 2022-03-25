@@ -34,8 +34,4 @@ module.exports = {
     maxEntrypointSize: 512000,
     maxAssetSize: 512000,
   },
-  devServer: {
-    static: `${__dirname}/dist/`,
-    port: 9000,
-  },
 };
