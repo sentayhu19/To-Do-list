@@ -1,6 +1,6 @@
 import '../../style.css';
 import Tasks from './tasklist';
-
+import taskchecker from './taskchecker';
 
 let renderlists = () => {}; // introduction
 const tasks = new Tasks();
@@ -41,11 +41,11 @@ const deleteTask = () => {
 
   deletetask.forEach((deleteBtn) => {
     deleteBtn.addEventListener('click', () => {
-      const elem = deleteBtn.parentNode.parentNode;
+      const elem = deleteBtn.parentNode.parentNode.parentNode.parentNode;
       const listid = elem.querySelector('input[type=checkbox]:checked').id;
       // Delete those checked checkboxes
+      console.log('Elm is ', elem);
       tasks.removetask(listid);
-      fixindex();
       renderlists();
       taskchecker();
     });
@@ -74,8 +74,10 @@ renderlists = () => {
   });
   listselector.innerHTML = render;
   editfunc();
+  console.log('render calling delete');
   deleteTask();
   taskchecker();
+  fixindex();
 };
 deleteTask();
 const addTasks = () => {
@@ -115,4 +117,5 @@ clearbtn.addEventListener('click', () => {
   renderlists();
 });
 taskchecker();
-import taskchecker from './taskchecker';
+
+export default tasks;
