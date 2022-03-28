@@ -26,7 +26,7 @@ const editfunc = () => {
       document.getElementById(place).style.cssText = 'display: none;';
       const editbox = document.getElementById(EditBoxId);
       editbox.addEventListener('keyup', (event) => {
-        if (event.code === 'Enter') {
+        if (event.code === '13') {
           tasks.list[editID].description = editbox.value;
 
           localStorage.setItem('tasks', JSON.stringify(tasks.list));
@@ -104,7 +104,7 @@ const addTasks = () => {
 };
 
 inputBox.addEventListener('keyup', (event) => {
-  if (event.code === 'Enter') {
+  if (event.code === '13') {
     addTasks();
     deleteTask();
   }
