@@ -105,7 +105,6 @@ const addTasks = () => {
 
 inputBox.addEventListener('keyup', (event) => {
   if (event.code === '13') {
-
     addTasks();
     deleteTask();
   }
